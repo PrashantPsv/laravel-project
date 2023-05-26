@@ -426,10 +426,10 @@
       <!-- end link -->   
       
       
-      <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">UI Elements</p>
+      {{-- <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">UI Elements</p> --}}
 
       <!-- link -->
-      <a href="./typography.html" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+      {{-- <a href="./typography.html" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
         <i class="fad fa-text text-xs mr-2"></i>
         typography
       </a>
@@ -492,7 +492,7 @@
       </a>
       <!-- end link -->
       
-      
+       --}}
 
     </div>
     <!-- end sidebar content -->

@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
-  <link rel="shortcut icon" href="{{ asset('img/fav.png') }}" type="image/x-icon">  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="{{ asset('img/fav.png') }}" type="image/x-icon">
   <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
-  <link rel="stylesheet" href="{{ asset('css/style.css') }}"> 
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+
+
   <title>Welcome To Cleopatra</title>
 </head>
 <body class="bg-gray-100">
@@ -13,7 +16,7 @@
 
 <!-- start navbar -->
 <div class="md:fixed md:w-full md:top-0 md:z-20 flex flex-row flex-wrap items-center bg-white p-6 border-b border-gray-300">
-    
+
     <!-- logo -->
     <div class="flex-none w-56 flex flex-row items-center">
       <img src="{{ asset('img/logo.png') }}" class="w-10 flex-none">
@@ -23,8 +26,8 @@
         <i class="fad fa-list-ul"></i>
       </button>
     </div>
-    <!-- end logo -->   
-    
+    <!-- end logo -->
+
     <!-- navbar content toggle -->
     <button id="navbarToggle" class="hidden md:block md:fixed right-0 mr-6">
       <i class="fad fa-chevron-double-down"></i>
@@ -35,15 +38,15 @@
     <div id="navbar" class="animated md:hidden md:fixed md:top-0 md:w-full md:left-0 md:mt-16 md:border-t md:border-b md:border-gray-200 md:p-10 md:bg-white flex-1 pl-3 flex flex-row flex-wrap justify-between items-center md:flex-col md:items-center">
       <!-- left -->
       <div class="text-gray-600 md:w-full md:flex md:flex-row md:justify-evenly md:pb-10 md:mb-10 md:border-b md:border-gray-200">
-        <a class="mr-2 transition duration-500 ease-in-out hover:text-gray-900" href="#" title="email"><i class="fad fa-envelope-open-text"></i></a>        
-        <a class="mr-2 transition duration-500 ease-in-out hover:text-gray-900" href="#" title="email"><i class="fad fa-comments-alt"></i></a>        
-        <a class="mr-2 transition duration-500 ease-in-out hover:text-gray-900" href="#" title="email"><i class="fad fa-check-circle"></i></a>        
-        <a class="mr-2 transition duration-500 ease-in-out hover:text-gray-900" href="#" title="email"><i class="fad fa-calendar-exclamation"></i></a>        
+        <a class="mr-2 transition duration-500 ease-in-out hover:text-gray-900" href="#" title="email"><i class="fad fa-envelope-open-text"></i></a>
+        <a class="mr-2 transition duration-500 ease-in-out hover:text-gray-900" href="#" title="email"><i class="fad fa-comments-alt"></i></a>
+        <a class="mr-2 transition duration-500 ease-in-out hover:text-gray-900" href="#" title="email"><i class="fad fa-check-circle"></i></a>
+        <a class="mr-2 transition duration-500 ease-in-out hover:text-gray-900" href="#" title="email"><i class="fad fa-calendar-exclamation"></i></a>
       </div>
-      <!-- end left -->      
+      <!-- end left -->
 
       <!-- right -->
-      <div class="flex flex-row-reverse items-center"> 
+      <div class="flex flex-row-reverse items-center">
 
         <!-- user -->
         <div class="dropdown relative md:static">
@@ -51,12 +54,12 @@
           <button class="menu-btn focus:outline-none focus:shadow-outline flex flex-wrap items-center">
             <div class="w-8 h-8 overflow-hidden rounded-full">
               <img class="w-full h-full object-cover" src="{{ asset('img/user.svg') }}" >
-            </div> 
+            </div>
 
             <div class="ml-2 capitalize flex ">
               <h1 class="text-sm text-gray-800 font-semibold m-0 p-0 leading-none">moeSaid</h1>
               <i class="fad fa-chevron-down ml-2 text-xs leading-none"></i>
-            </div>                        
+            </div>
           </button>
 
           <button class="hidden fixed top-0 left-0 z-10 w-full h-full menu-overflow"></button>
@@ -65,49 +68,39 @@
 
             <!-- item -->
             <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out" href="#">
-              <i class="fad fa-user-edit text-xs mr-1"></i> 
+              <i class="fad fa-user-edit text-xs mr-1"></i>
               edit my profile
-            </a>     
+            </a>
             <!-- end item -->
 
             <!-- item -->
             <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out" href="#">
-              <i class="fad fa-inbox-in text-xs mr-1"></i> 
+              <i class="fad fa-inbox-in text-xs mr-1"></i>
               my inbox
-            </a>     
+            </a>
             <!-- end item -->
 
             <!-- item -->
             <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out" href="#">
-              <i class="fad fa-badge-check text-xs mr-1"></i> 
+              <i class="fad fa-badge-check text-xs mr-1"></i>
               tasks
-            </a>     
+            </a>
             <!-- end item -->
 
             <!-- item -->
             <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out" href="#">
-              <i class="fad fa-comment-alt-dots text-xs mr-1"></i> 
+              <i class="fad fa-comment-alt-dots text-xs mr-1"></i>
               chats
-            </a>     
+            </a>
             <!-- end item -->
 
             <hr>
 
             <!-- item -->
-            {{-- <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out" href="#">
-              <i class="fad fa-user-times text-xs mr-1"></i> 
+            <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out" href="#">
+              <i class="fad fa-user-times text-xs mr-1"></i>
               log out
-            </a>  --}}
-            <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                                     <i class="fad fa-user-times text-xs mr-1"></i> 
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>    
+            </a>
             <!-- end item -->
 
           </div>
@@ -118,7 +111,7 @@
         <div class="dropdown relative mr-5 md:static">
 
           <button class="text-gray-500 menu-btn p-0 m-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none transition-all ease-in-out duration-300">
-            <i class="fad fa-bells"></i>               
+            <i class="fad fa-bells"></i>
           </button>
 
           <button class="hidden fixed top-0 left-0 z-10 w-full h-full menu-overflow"></button>
@@ -229,7 +222,7 @@
                 view all
               </a>
             </div>
-            <!-- end bottom -->            
+            <!-- end bottom -->
           </div>
         </div>
         <!-- end notifcation -->
@@ -238,7 +231,7 @@
         <div class="dropdown relative mr-5 md:static">
 
           <button class="text-gray-500 menu-btn p-0 m-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none transition-all ease-in-out duration-300">
-            <i class="fad fa-comments"></i>               
+            <i class="fad fa-comments"></i>
           </button>
 
           <button class="hidden fixed top-0 left-0 z-10 w-full h-full menu-overflow"></button>
@@ -275,7 +268,7 @@
 
             </a>
             <hr>
-            <!-- end item --> 
+            <!-- end item -->
 
             <!-- item -->
             <a class="flex flex-row items-center justify-start px-4 py-4 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 transition-all duration-300 ease-in-out" href="#">
@@ -328,10 +321,10 @@
                 view all
               </a>
             </div>
-            <!-- end bottom -->            
+            <!-- end bottom -->
           </div>
         </div>
-        <!-- end messages -->               
+        <!-- end messages -->
 
 
       </div>
@@ -345,10 +338,10 @@
 
 <!-- strat wrapper -->
 <div class="h-screen flex flex-row flex-wrap">
-  
+
     <!-- start sidebar -->
   <div id="sideBar" class="relative flex flex-col flex-wrap bg-white border-r border-gray-300 p-6 flex-none w-64 md:-ml-64 md:fixed md:top-0 md:z-30 md:h-screen md:shadow-xl animated faster">
-    
+
 
     <!-- sidebar content -->
     <div class="flex flex-col">
@@ -365,16 +358,13 @@
 
       <!-- link -->
       <a href="./index.html" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-chart-pie text-xs mr-2"></i>                
+        <i class="fad fa-chart-pie text-xs mr-2"></i>
         Analytics dashboard
       </a>
       <!-- end link -->
 
       <!-- link -->
-      {{-- <a href="./index-1.html" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-shopping-cart text-xs mr-2"></i>
-        ecommerce dashboard
-      </a> --}}
+
       <!-- end link -->
 
       <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">apps</p>
@@ -389,14 +379,14 @@
       <!-- link -->
       <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
         <i class="fad fa-comments text-xs mr-2"></i>
-        Sub-category
+        Sub-Category
       </a>
       <!-- end link -->
 
       <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+      <a href="{{ route('state.index') }}" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
         <i class="fad fa-shield-check text-xs mr-2"></i>
-        State
+        state
       </a>
       <!-- end link -->
 
@@ -417,82 +407,19 @@
       <!-- link -->
       <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
         <i class="fad fa-folder-open text-xs mr-2"></i>
-        Academy
+        Accademy
       </a>
+
       <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-folder-open text-xs mr-2"></i>
-        Teachers
-      </a>
-      <!-- end link -->   
-      
-      
-      {{-- <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">UI Elements</p> --}}
-
-      <!-- link -->
-      {{-- <a href="./typography.html" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-text text-xs mr-2"></i>
-        typography
+        <i class="fad fa-shopping-cart text-xs mr-2"></i>
+        Teacher
       </a>
       <!-- end link -->
 
-      <!-- link -->
-      <a href="./alert.html" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-whistle text-xs mr-2"></i>
-        alerts
-      </a>
-      <!-- end link -->
-      
 
-      <!-- link -->
-      <a href="./buttons.html" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-cricket text-xs mr-2"></i>
-        buttons
-      </a>
-      <!-- end link -->
 
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-box-open text-xs mr-2"></i>
-        Content
-      </a>
-      <!-- end link -->
 
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-swatchbook text-xs mr-2"></i>
-        colors
-      </a>
-      <!-- end link -->
 
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-atom-alt text-xs mr-2"></i>
-        icons
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-club text-xs mr-2"></i>
-        card
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-cheese-swiss text-xs mr-2"></i>
-        Widgets
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-computer-classic text-xs mr-2"></i>
-        Components
-      </a>
-      <!-- end link -->
-      
-       --}}
 
     </div>
     <!-- end sidebar content -->
@@ -501,9 +428,9 @@
   <!-- end sidbar -->
 
   <!-- strat content -->
-  <div class="bg-gray-100 flex-1 p-6 md:mt-16"> 
+  {{-- <div class="bg-gray-100 flex-1 p-6 md:mt-16">
 
-    
+
     <!-- General Report -->
     <div class="grid grid-cols-4 gap-6 xl:grid-cols-1">
 
@@ -512,7 +439,7 @@
     <div class="report-card">
         <div class="card">
             <div class="card-body flex flex-col">
-                
+
                 <!-- top -->
                 <div class="flex flex-row justify-between items-center">
                     <div class="h6 text-indigo-700 fad fa-shopping-cart"></div>
@@ -527,9 +454,9 @@
                 <div class="mt-8">
                     <h1 class="h5 num-4"></h1>
                     <p>items sales</p>
-                </div>                
+                </div>
                 <!-- end bottom -->
-    
+
             </div>
         </div>
         <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
@@ -541,7 +468,7 @@
     <div class="report-card">
         <div class="card">
             <div class="card-body flex flex-col">
-                
+
                 <!-- top -->
                 <div class="flex flex-row justify-between items-center">
                     <div class="h6 text-red-700 fad fa-store"></div>
@@ -556,9 +483,9 @@
                 <div class="mt-8">
                     <h1 class="h5 num-4"></h1>
                     <p>new orders</p>
-                </div>                
+                </div>
                 <!-- end bottom -->
-    
+
             </div>
         </div>
         <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
@@ -570,7 +497,7 @@
     <div class="report-card">
         <div class="card">
             <div class="card-body flex flex-col">
-                
+
                 <!-- top -->
                 <div class="flex flex-row justify-between items-center">
                     <div class="h6 text-yellow-600 fad fa-sitemap"></div>
@@ -585,9 +512,9 @@
                 <div class="mt-8">
                     <h1 class="h5 num-4"></h1>
                     <p>total Products</p>
-                </div>                
+                </div>
                 <!-- end bottom -->
-    
+
             </div>
         </div>
         <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
@@ -599,7 +526,7 @@
     <div class="report-card">
         <div class="card">
             <div class="card-body flex flex-col">
-                
+
                 <!-- top -->
                 <div class="flex flex-row justify-between items-center">
                     <div class="h6 text-green-700 fad fa-users"></div>
@@ -614,26 +541,26 @@
                 <div class="mt-8">
                     <h1 class="h5 num-4"></h1>
                     <p>new Visitor</p>
-                </div>                
+                </div>
                 <!-- end bottom -->
-    
+
             </div>
         </div>
         <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
     </div>
     <!-- end card -->
-    
 
-</div>
+
+</div> --}}
     <!-- End General Report -->
 
     <!-- strat Analytics -->
-    <div class="mt-6 grid grid-cols-2 gap-6 xl:grid-cols-1">
+    {{-- <div class="mt-6 grid grid-cols-2 gap-6 xl:grid-cols-1"> --}}
 
-    <!-- update section -->
+    {{-- <!-- update section -->
     <div class="card bg-teal-400 border-teal-400 shadow-md text-white">
         <div class="card-body flex flex-row">
-            
+
             <!-- image -->
             <div class="img-wrapper w-40 h-40 flex justify-center items-center">
                 <img src="{{ asset('img/happy.svg') }}" alt="img title">
@@ -654,15 +581,15 @@
             <!-- end info -->
 
         </div>
-    </div>
+    </div> --}}
     <!-- end update section -->
 
     <!-- carts -->
-    <div class="flex flex-col">
+    {{-- <div class="flex flex-col">
 
         <!-- alert -->
         <div class="alert alert-dark mb-6">
-            Hi! Wait A Minute . . . . . . Follow Me On Twitter 
+            Hi! Wait A Minute . . . . . . Follow Me On Twitter
             <a class="ml-2" target="_blank" href="https://twitter.com/MohamedSaid__">@moesaid</a>
         </div>
         <!-- end alert -->
@@ -680,12 +607,12 @@
                     <div class="bg-teal-200 text-teal-700 border-teal-300 border w-10 h-10 rounded-full flex justify-center items-center">
                         <i class="fad fa-eye"></i>
                     </div>
-                </div>                
+                </div>
                 <div class="analytics_1"></div>
             </div>
 
             <div class="card">
-                <div class="py-3 px-4 flex flex-row justify-between">                    
+                <div class="py-3 px-4 flex flex-row justify-between">
                     <h1 class="h6">
                         <span class="num-2"></span>k
                         <p>Unique Users</p>
@@ -698,21 +625,21 @@
                 <div class="analytics_1"></div>
             </div>
 
-        </div>     
+        </div>
         <!-- charts    -->
 
-    </div>
+    </div> --}}
     <!-- end charts -->
 
 
-</div>
+{{-- </div> --}}
     <!-- end Analytics -->
 
     <!-- Sales Overview -->
-    <div class="card mt-6">
+    {{-- <div class="card mt-6"> --}}
 
     <!-- header -->
-    <div class="card-header flex flex-row justify-between">
+    {{-- <div class="card-header flex flex-row justify-between">
         <h1 class="h6">Sales Overview</h1>
 
         <div class="flex flex-row justify-center items-center">
@@ -754,24 +681,24 @@
             <a href="#" class="btn-shadow mt-6">view details</a>
 
         </div>
-    
+
         <div class="">
             <div id="sealsOverview"></div>
         </div>
-    
-    </div>
+
+    </div> --}}
     <!-- end body -->
 
-</div>
+{{-- </div> --}}
     <!-- end Sales Overview -->
 
     <!-- start numbers -->
-    <div class="grid grid-cols-5 gap-6 xl:grid-cols-2">
+    {{-- <div class="grid grid-cols-5 gap-6 xl:grid-cols-2">
 
     <!-- card -->
     <div class="card mt-6">
         <div class="card-body flex items-center">
-            
+
             <div class="px-3 py-2 rounded bg-indigo-600 text-white mr-3">
                 <i class="fad fa-wallet"></i>
             </div>
@@ -784,11 +711,11 @@
         </div>
     </div>
     <!-- end card -->
-    
+
     <!-- card -->
     <div class="card mt-6">
         <div class="card-body flex items-center">
-            
+
             <div class="px-3 py-2 rounded bg-green-600 text-white mr-3">
                 <i class="fad fa-shopping-cart"></i>
             </div>
@@ -805,7 +732,7 @@
     <!-- card -->
     <div class="card mt-6 xl:mt-1">
         <div class="card-body flex items-center">
-            
+
             <div class="px-3 py-2 rounded bg-yellow-600 text-white mr-3">
                 <i class="fad fa-blog"></i>
             </div>
@@ -822,7 +749,7 @@
     <!-- card -->
     <div class="card mt-6 xl:mt-1">
         <div class="card-body flex items-center">
-            
+
             <div class="px-3 py-2 rounded bg-red-600 text-white mr-3">
                 <i class="fad fa-comments"></i>
             </div>
@@ -839,7 +766,7 @@
     <!-- card -->
     <div class="card mt-6 xl:mt-1 xl:col-span-2">
         <div class="card-body flex items-center">
-            
+
             <div class="px-3 py-2 rounded bg-pink-600 text-white mr-3">
                 <i class="fad fa-user"></i>
             </div>
@@ -853,11 +780,11 @@
     </div>
     <!-- end card -->
 
-</div>
+</div> --}}
     <!-- end nmbers -->
 
     <!-- start quick Info -->
-    <div class="grid grid-cols-3 gap-6 mt-6 xl:grid-cols-1">
+    {{-- <div class="grid grid-cols-3 gap-6 mt-6 xl:grid-cols-1">
 
 
     <!-- Browser Stats -->
@@ -867,9 +794,9 @@
         <!-- brawser -->
         <div class="p-6 flex flex-row justify-between items-center text-gray-600 border-b">
             <div class="flex items-center">
-                <i class="fab fa-chrome mr-4"></i>    
+                <i class="fab fa-chrome mr-4"></i>
                 <h1>google chrome</h1>
-            </div>                
+            </div>
             <div>
                 <span class="num-2"></span>%
             </div>
@@ -879,9 +806,9 @@
         <!-- brawser -->
         <div class="p-6 flex flex-row justify-between items-center text-gray-600 border-b">
             <div class="flex items-center">
-                <i class="fab fa-firefox mr-4"></i>    
+                <i class="fab fa-firefox mr-4"></i>
                 <h1>firefox</h1>
-            </div>                
+            </div>
             <div>
                 <span class="num-2"></span>%
             </div>
@@ -891,9 +818,9 @@
         <!-- brawser -->
         <div class="p-6 flex flex-row justify-between items-center text-gray-600 border-b">
             <div class="flex items-center">
-                <i class="fab fa-internet-explorer mr-4"></i>    
+                <i class="fab fa-internet-explorer mr-4"></i>
                 <h1>internet explorer</h1>
-            </div>                
+            </div>
             <div>
                 <span class="num-2"></span>%
             </div>
@@ -903,9 +830,9 @@
         <!-- brawser -->
         <div class="p-6 flex flex-row justify-between items-center text-gray-600 border-b-0">
             <div class="flex items-center">
-                <i class="fab fa-safari mr-4"></i>    
+                <i class="fab fa-safari mr-4"></i>
                 <h1>safari</h1>
-            </div>                
+            </div>
             <div>
                 <span class="num-2"></span>%
             </div>
@@ -930,52 +857,58 @@
             </thead>
             <tbody class="text-gray-600">
 
-                <tr>                    
+                <tr>
                     <td class="border border-l-0 px-4 py-2 text-center text-green-500"><i class="fad fa-circle"></i></td>
                     <td class="border border-l-0 px-4 py-2">Lightning to USB-C Adapter Lightning.</td>
                     <td class="border border-l-0 px-4 py-2">$<span class="num-2"></span></td>
                     <td class="border border-l-0 border-r-0 px-4 py-2"><span class="num-2"></span> minutes ago</td>
                 </tr>
-                <tr>                    
+                <tr>
                     <td class="border border-l-0 px-4 py-2 text-center text-yellow-500"><i class="fad fa-circle"></i></td>
                     <td class="border border-l-0 px-4 py-2">Apple iPhone 8.</td>
                     <td class="border border-l-0 px-4 py-2">$<span class="num-2"></span></td>
                     <td class="border border-l-0 border-r-0 px-4 py-2"><span class="num-2"></span> minutes ago</td>
                 </tr>
-                <tr>                    
+                <tr>
                     <td class="border border-l-0 px-4 py-2 text-center text-green-500"><i class="fad fa-circle"></i></td>
                     <td class="border border-l-0 px-4 py-2">Apple MacBook Pro.</td>
                     <td class="border border-l-0 px-4 py-2">$<span class="num-2"></span></td>
                     <td class="border border-l-0 border-r-0 px-4 py-2"><span class="num-2"></span> minutes ago</td>
                 </tr>
-                <tr>                    
+                <tr>
                     <td class="border border-l-0 px-4 py-2 text-center text-red-500"><i class="fad fa-circle"></i></td>
                     <td class="border border-l-0 px-4 py-2">Samsung Galaxy S9.</td>
                     <td class="border border-l-0 px-4 py-2">$<span class="num-2"></span></td>
                     <td class="border border-l-0 border-r-0 px-4 py-2"><span class="num-2"></span> minutes ago</td>
                 </tr>
-                <tr>                    
+                <tr>
                     <td class="border border-l-0 px-4 py-2 text-center text-yellow-500"><i class="fad fa-circle"></i></td>
                     <td class="border border-l-0 px-4 py-2">Samsung Galaxy S8 256GB.</td>
                     <td class="border border-l-0 px-4 py-2">$<span class="num-2"></span></td>
                     <td class="border border-l-0 border-r-0 px-4 py-2"><span class="num-2"></span> minutes ago</td>
                 </tr>
-                <tr>                    
+                <tr>
                     <td class="border border-l-0 border-b-0 px-4 py-2 text-center text-green-500"><i class="fad fa-circle"></i></td>
                     <td class="border border-l-0 border-b-0 px-4 py-2">apple watch.</td>
                     <td class="border border-l-0 border-b-0 px-4 py-2">$<span class="num-2"></span></td>
                     <td class="border border-l-0 border-b-0 border-r-0 px-4 py-2"><span class="num-2"></span> minutes ago</td>
                 </tr>
-                
+
             </tbody>
         </table>
     </div>
     <!-- End Recent Sales -->
 
 
-</div>
+</div> --}}
     <!-- end quick Info -->
-        
+    <div class="content-wrapper" style="min-height: 917px;">
+        <!-- Main content -->
+        <section class="content" style="padding-top: 20px">
+    @yield('content')
+  </div>
+</div>
+
 
   </div>
   <!-- end content -->
@@ -986,6 +919,8 @@
 <!-- script -->
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <!-- end script -->
+<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+
 <script src="{{ asset('js/scripts.js') }}"></script>
 </body>
 </html>

@@ -1,43 +1,68 @@
 @extends('welcome')
 @section('content')
-<div class="container-xl">
+<div class="container-xl" style="width:720px;">
     <div class="card-header">
-        State
+        <h4 style="font-weight:600">State</h4>
     </div>
 
     <div class="">
-        <form method="POST" action="" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("state.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label class="required" for="name"></label>
+                <label class="required" for="name">Name</label>
                 <input class="form-control " type="text" name="name" id="name" value="" required>
-                {{-- @if($errors->has('name'))
-                    <span class="text-danger">{{ $errors->first('name') }}</span>
-                @endif --}}
+                {{-- @forelse ($states as $id=>$name )
+
+                @empty
+
+                @endforelse --}}
                 <span class="help-block"></span>
             </div>
-            <div class="form-group">
-                <label for="vehicle_no"></label>
-                <input class="form-control " type="text" name="vehicle_no" id="vehicle_no" value="">
-                {{-- @if($errors->has('vehicle_no'))
-                    <span class="text-danger">{{ $errors->first('vehicle_no') }}</span>
-                @endif --}}
-                <span class="help-block"></span>
-            </div>
-            <div class="form-group">
-                <label for="seats"></label>
-                <input class="form-control " type="number" name="seats" id="seats" value="" step="1">
-                {{-- @if($errors->has('seats'))
-                    <span class="text-danger">{{ $errors->first('seats') }}</span>
-                @endif --}}
-                <span class="help-block"></span>
-            </div>
-            <div class="form-group">
+
+            <div class="form-group pt-2">
                 <button class="btn btn-danger" type="submit">
                     Save
                 </button>
             </div>
         </form>
+    </div>
+    <div class="pt-5">
+        <table class=" table table-bordered table-striped table-hover datatable datatable-Createvehicle">
+
+        <thead>
+            <tr>
+
+                <th>
+                    id
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Actions
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @forelse ($states as $id=>$name )
+            <td>
+                {{ $id ?? '' }}
+            </td>
+            <td>
+                {{ $name ?? '' }}
+            </td>
+            <td>
+
+            </td>
+
+                @empty
+                <td>
+                    No Data Found
+                </td>
+                @endforelse
+    </tbody>
+</table>
     </div>
 </div>
 

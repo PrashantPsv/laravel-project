@@ -20,4 +20,5 @@ Route::get('/main', 'MainController@index');
 Route::post('/main/checklogin', [MainController::class, 'checklogin']);
 Route::get('main/successlogin', [MainController::class, 'successlogin'])->name('main.successlogin');
 Route::get('state/index', [stateController::class, 'index'])->name('state.index');
+Route::post('state/store', [stateController::class, 'store'])->name("state.store");
 Route::get('main/logout', 'MainController@logout');

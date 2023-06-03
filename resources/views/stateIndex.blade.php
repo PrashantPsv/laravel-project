@@ -20,7 +20,7 @@
             </div>
 
             <div class="form-group pt-2">
-                <button class="btn btn-danger" type="submit">
+                <button class="btn btn-primary" type="submit">
                     Save
                 </button>
             </div>
@@ -45,23 +45,32 @@
             </tr>
         </thead>
         <tbody>
-            @forelse ($states as $id=>$name )
-            <td>
-                {{ $id ?? '' }}
-            </td>
-            <td>
-                {{ $name ?? '' }}
-            </td>
-            <td>
-
-            </td>
-
-                @empty
+            @forelse ($states as $id => $name)
+            <tr>
                 <td>
+                    {{ $id ?? '' }}
+                </td>
+                <td>
+                    {{ $name ?? '' }}
+                </td>
+                <td>
+                    <a class="btn btn-xs btn-primary" href="{{ route('state.edit', [$id]) }}">
+                        Edit
+                    </a>
+                    <a class="btn btn-xs btn-danger" href="">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+            @empty
+            <tr>
+                <td colspan="3">
                     No Data Found
                 </td>
-                @endforelse
-    </tbody>
+            </tr>
+            @endforelse
+        </tbody>
+
 </table>
     </div>
 </div>

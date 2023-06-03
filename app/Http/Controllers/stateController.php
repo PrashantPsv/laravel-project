@@ -21,4 +21,15 @@ class stateController extends Controller
 
      return redirect()->route('state.index');
    }
+
+   public function edit($request){
+   $state=DB::table('table_states')->find($request);
+     return view('stateEdit',compact('state'));
+   }
+
+   public function Update(Request $request){
+    dd($request->id);
+    $state = DB::table('table_states')->where('id', $request->id)->update(['name' => $request->name]);
+    return redirect()->route('state.index');
+   }
 }

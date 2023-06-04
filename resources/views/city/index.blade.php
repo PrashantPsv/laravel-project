@@ -2,20 +2,29 @@
 @section('content')
 <div class="container-xl" style="width:720px;">
     <div class="card-header">
-        <h4 style="font-weight:600">State</h4>
+        <h4 style="font-weight:600">Citys</h4>
     </div>
 
     <div class="">
-        <form method="POST" action="{{ route("state.store") }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("city.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label class="required" for="name">Name</label>
+                <label class="required" for="name">city Name</label>
                 <input class="form-control " type="text" name="name" id="name" value="" required>
-                {{-- @forelse ($states as $id=>$name )
+                <span class="help-block"></span>
+            </div>
+            <div class="form-group">
+                <label class="required" for="city">State Name</label>
+                <select class="form-control "  name="State" id="city" value="" required>
+                    <option value="">Please Select</option>
+                    @forelse ($states as $id=>$name )
+                        <option value="{{ $name }}">{{ $name }}</option>
+                    @empty
+                    <option value="">Nothing to select</option>
 
-                @empty
+                    @endforelse
+                </select>
 
-                @endforelse --}}
                 <span class="help-block"></span>
             </div>
 
@@ -35,7 +44,10 @@
                     id
                 </th>
                 <th>
-                    Name
+                    City
+                </th>
+                <th>
+                    State
                 </th>
                 <th>
                     Actions
@@ -43,19 +55,22 @@
             </tr>
         </thead>
         <tbody>
-            @forelse ($states as $id => $name)
+            @forelse ($citys as $city)
             <tr>
                 <td>
-                    {{ $id ?? '' }}
+                    {{ $city->id ?? '' }}
                 </td>
                 <td>
-                    {{ $name ?? '' }}
+                    {{ $city->name ?? '' }}
                 </td>
                 <td>
-                    <a class="btn btn-xs btn-primary" href="{{ route('state.edit', [$id]) }}">
+                    {{ $city->state ?? '' }}
+                </td>
+                <td>
+                    <a class="btn btn-xs btn-primary" href="{{ route('city.edit', [$city->id]) }}">
                         Edit
                     </a>
-                    <a class="btn btn-xs btn-danger" href="{{ route('state.delete', [$id]) }}">
+                    <a class="btn btn-xs btn-danger" href="{{ route('city.delete', [$city->id]) }}">
                         Delete
                     </a>
                 </td>

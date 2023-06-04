@@ -12,9 +12,7 @@
                 <label class="required" for="name">Name</label>
                 <input class="form-control " type="text" name="name" id="name" value="{{ $state->name ==""?'':$state->name }}" required>
                 {{-- @forelse ($states as $id=>$name )
-
                 @empty
-
                 @endforelse --}}
                 <span class="help-block"></span>
             </div>

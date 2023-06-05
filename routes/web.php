@@ -5,6 +5,8 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\stateController;
 use App\Http\Controllers\cityController;
 use App\Http\Controllers\areacontroller;
+use App\Http\Controllers\TeacherC0ntroller;
+
 
 
 
@@ -39,4 +41,11 @@ Route::post('area/store', [areacontroller::class, 'store'])->name("area.store");
 Route::get('/area/{id}/edit', [areacontroller::class, 'edit'])->name('area.edit');
 Route::post('/area/{id}/Update', [areacontroller::class, 'Update'])->name('area.Update');
 Route::get('/area/{id}/delete', [areacontroller::class, 'delete'])->name('area.delete');
+
+// Teacher
+Route::get('Add-Teacher/index', [TeacherC0ntroller::class, 'index'])->name('addTeacher.index');
+Route::post('Add-Teacher/store', [TeacherC0ntroller::class, 'store'])->name("addTeacher.store");
+Route::get('/Add-Teacher/{id}/edit', [TeacherC0ntroller::class, 'edit'])->name('addTeacher.edit');
+Route::post('/Add-Teacher/{id}/Update', [TeacherC0ntroller::class, 'Update'])->name('addTeacher.Update');
+Route::get('/Add-Teacher/{id}/delete', [TeacherC0ntroller::class, 'delete'])->name('addTeacher.delete');
 Route::get('main/logout', 'MainController@logout');

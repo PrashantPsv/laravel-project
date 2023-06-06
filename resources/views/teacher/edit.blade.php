@@ -26,6 +26,20 @@
                 <label for="email">Phone Number:</label>
                 <input type="number" name="phone" value="{{ $teacher->phone }}" class="form-control" required>
             </div>
+            <div class="form-group">
+                <label class="required" for="Category">Sub Category</label>
+                <select class="form-control "  name="Category" id="Category" value="" required>
+                    <option value="">Please Select</option>
+                    @forelse ($subCategorys as $id=>$name )
+                        <option value="{{ $name }} {{ $name == $teacher->type ? 'selected' : '' }}">{{ $name }}</option>
+                    @empty
+                    <option value="">Nothing to select</option>
+
+                    @endforelse
+                </select>
+
+                <span class="help-block"></span>
+            </div>
 
 
             <button type="submit" class="btn btn-primary mt-2">Update Teacher</button>

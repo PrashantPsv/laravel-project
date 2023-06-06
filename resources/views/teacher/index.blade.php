@@ -27,6 +27,20 @@
                 <label for="email">Phone Number:</label>
                 <input type="number" name="phone" class="form-control" required>
             </div>
+            <div class="form-group">
+                <label class="required" for="Category">Sub Category</label>
+                <select class="form-control "  name="Category" id="Category" value="" required>
+                    <option value="">Please Select</option>
+                    @forelse ($subCategorys as $id=>$name )
+                        <option value="{{ $name }}">{{ $name }}</option>
+                    @empty
+                    <option value="">Nothing to select</option>
+
+                    @endforelse
+                </select>
+
+                <span class="help-block"></span>
+            </div>
 
 
             <button type="submit" class="btn btn-primary mt-2">Add Teacher</button>
@@ -53,6 +67,9 @@
                         <th>
                             Phone Number
                         </th>
+                        <th>
+                         Sub-Category
+                        </th>
 
                         <th>
                             Action
@@ -76,6 +93,9 @@
                             </td>
                             <td>
                                 {{ $teacher->phone ?? '' }}
+                            </td>
+                            <td>
+                                {{ $teacher->type ?? '' }}
                             </td>
                             <td>
                                 <a class="btn btn-xs btn-primary p-0" href="{{ route('addTeacher.edit', [$teacher->id]) }}">

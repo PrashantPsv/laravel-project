@@ -10,8 +10,9 @@ class TeacherC0ntroller extends Controller
 {
     public function index(){
         $teachers = DB::table('table__teacher')->get();
+        $subCategorys = DB::table('table_sub_category')->pluck('name', 'id');
 
-        return view('teacher.index',compact('teachers'));
+        return view('teacher.index',compact('teachers','subCategorys'));
        }
 
        public function store(Request $request){
@@ -21,7 +22,7 @@ class TeacherC0ntroller extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'lastname' => $request->lastname,
-            'type' => 'Teacher',
+            'type' => $request->Category,
         ]);
 
      return redirect()->route('addTeacher.index');
@@ -29,14 +30,19 @@ class TeacherC0ntroller extends Controller
 
     public function edit($request){
         $teacher = DB::table('table__teacher')->find($request);
-          return view('teacher.edit',compact('teacher'));
+        $subCategorys = DB::table('table_sub_category')->pluck('name', 'id');
+
+          return view('teacher.edit',compact('teacher','subCategorys'));
         }
 
         public function Update(Request $request,$id){
             $city = DB::table('table__teacher')->where('id', $id)->update(['name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'lastname' => $request->lastname]);
+            'lastname' => $request->lastname,
+            'type' => $request->Category,
+
+        ]);
             return redirect()->route('addTeacher.index');
            }
 

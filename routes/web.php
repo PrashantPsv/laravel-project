@@ -6,6 +6,9 @@ use App\Http\Controllers\stateController;
 use App\Http\Controllers\cityController;
 use App\Http\Controllers\areacontroller;
 use App\Http\Controllers\TeacherC0ntroller;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\subCategoryController;
+
 
 
 
@@ -49,3 +52,17 @@ Route::get('/Add-Teacher/{id}/edit', [TeacherC0ntroller::class, 'edit'])->name('
 Route::post('/Add-Teacher/{id}/Update', [TeacherC0ntroller::class, 'Update'])->name('addTeacher.Update');
 Route::get('/Add-Teacher/{id}/delete', [TeacherC0ntroller::class, 'delete'])->name('addTeacher.delete');
 Route::get('main/logout', 'MainController@logout');
+
+//Category
+Route::get('Category/index', [CategoryController::class, 'index'])->name('Category.index');
+Route::post('Category/store', [CategoryController::class, 'store'])->name("Category.store");
+Route::get('/Category/{id}/edit', [CategoryController::class, 'edit'])->name('Category.edit');
+Route::post('/Category/{id}/Update', [CategoryController::class, 'Update'])->name('Category.Update');
+Route::get('/Category/{id}/delete', [CategoryController::class, 'delete'])->name('Category.delete');
+
+//Sub Category
+Route::get('subCategory/index', [subCategoryController::class, 'index'])->name('subCategory.index');
+Route::post('subCategory/store', [subCategoryController::class, 'store'])->name("subCategory.store");
+Route::get('/subCategory/{id}/edit', [subCategoryController::class, 'edit'])->name('subCategory.edit');
+Route::post('/subCategory/{id}/Update', [subCategoryController::class, 'Update'])->name('subCategory.Update');
+Route::get('/subCategory/{id}/delete', [subCategoryController::class, 'delete'])->name('subCategory.delete');

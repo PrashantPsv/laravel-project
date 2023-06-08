@@ -1,18 +1,14 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AccademyController;
+use App\Http\Controllers\areacontroller;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\cityController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\stateController;
-use App\Http\Controllers\cityController;
-use App\Http\Controllers\areacontroller;
-use App\Http\Controllers\TeacherC0ntroller;
-use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\subCategoryController;
-
-
-
-
-
+use App\Http\Controllers\TeacherC0ntroller;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('login');
@@ -66,3 +62,10 @@ Route::post('subCategory/store', [subCategoryController::class, 'store'])->name(
 Route::get('/subCategory/{id}/edit', [subCategoryController::class, 'edit'])->name('subCategory.edit');
 Route::post('/subCategory/{id}/Update', [subCategoryController::class, 'Update'])->name('subCategory.Update');
 Route::get('/subCategory/{id}/delete', [subCategoryController::class, 'delete'])->name('subCategory.delete');
+
+//Accademy
+Route::get('Accademy/index', [AccademyController::class, 'index'])->name('Accademy.index');
+Route::post('Accademy/store', [AccademyController::class, 'store'])->name("Accademy.store");
+Route::get('/Accademy/{id}/edit', [AccademyController::class, 'edit'])->name('Accademy.edit');
+// Route::post('/subCategory/{id}/Update', [subCategoryController::class, 'Update'])->name('subCategory.Update');
+// Route::get('/subCategory/{id}/delete', [subCategoryController::class, 'delete'])->name('subCategory.delete');

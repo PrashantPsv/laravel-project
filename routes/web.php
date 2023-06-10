@@ -9,19 +9,28 @@ use App\Http\Controllers\stateController;
 use App\Http\Controllers\subCategoryController;
 use App\Http\Controllers\TeacherC0ntroller;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 
 Route::get('/', function () {
     return view('login');
-});
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+})->name('home');
+
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect()->route('home');
+})->name('logout');
+
+
 Route::get('/uploadfile', 'UploadfileController@index');
 Route::post('/uploadfile', 'UploadfileController@upload');
-Route::get('/main', 'MainController@index');
+Route::get('/main', [MainController::class, 'index'])->name('main');
 // Route::post('/main/checklogin', 'MainController@checklogin');
 Route::post('/main/checklogin', [MainController::class, 'checklogin']);
 Route::get('main/successlogin', [MainController::class, 'successlogin'])->name('main.successlogin');
+Route::get('main/Teacher-login', [MainController::class, 'teacherlogin'])->name('main.teacherlogin');
+Route::get('main/logout', [MainController::class, 'logout'])->name('main.logout');
+
 Route::get('state/index', [stateController::class, 'index'])->name('state.index');
 Route::post('state/store', [stateController::class, 'store'])->name("state.store");
 Route::get('/state/{id}/edit', [StateController::class, 'edit'])->name('state.edit');
@@ -47,7 +56,6 @@ Route::post('Add-Teacher/store', [TeacherC0ntroller::class, 'store'])->name("add
 Route::get('/Add-Teacher/{id}/edit', [TeacherC0ntroller::class, 'edit'])->name('addTeacher.edit');
 Route::post('/Add-Teacher/{id}/Update', [TeacherC0ntroller::class, 'Update'])->name('addTeacher.Update');
 Route::get('/Add-Teacher/{id}/delete', [TeacherC0ntroller::class, 'delete'])->name('addTeacher.delete');
-Route::get('main/logout', 'MainController@logout');
 
 //Category
 Route::get('Category/index', [CategoryController::class, 'index'])->name('Category.index');

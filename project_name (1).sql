@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2023 at 07:31 AM
+-- Generation Time: Jun 10, 2023 at 09:40 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -178,6 +178,13 @@ CREATE TABLE `table_sub_category` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `table_sub_category`
+--
+
+INSERT INTO `table_sub_category` (`id`, `name`, `Category`, `created_at`, `updated_at`) VALUES
+(1, 'test teacher', 'admin', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -224,6 +231,13 @@ CREATE TABLE `table__category` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `table__category`
+--
+
+INSERT INTO `table__category` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'admin', NULL, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -237,10 +251,19 @@ CREATE TABLE `table__teacher` (
   `email` varchar(255) DEFAULT NULL,
   `phone` varchar(255) DEFAULT NULL,
   `address` text DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `table__teacher`
+--
+
+INSERT INTO `table__teacher` (`id`, `name`, `lastname`, `email`, `phone`, `address`, `password`, `type`, `created_at`, `updated_at`) VALUES
+(1, 'subin', 's', 'subinstark24@gmail.com', '01234567890', NULL, '$2y$10$IYnBpGMxGRB45fZOMunXTeuzSO91XIpTDl7KSwmRi8kSJlHnsnKR.', NULL, NULL, NULL),
+(3, 'test', 'teacher', 'testTeacher@gmail.com', '01234567890', NULL, '$2y$10$zZB44KzmHPTrdQ40/NR0tOhl2QIsql8TB/dv2zaZ3uvSZEwpky7WO', 'test teacher', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -264,7 +287,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@gmail.com', NULL, '$2y$10$IYnBpGMxGRB45fZOMunXTeuzSO91XIpTDl7KSwmRi8kSJlHnsnKR.', '$2y$10$S80R5WxAk261UMmRD1WjpeF6z4KUf5S5Vm07ZYoXAz1WURvTvg5UK', '2023-06-07 12:10:05', '2023-06-07 12:10:05');
+(1, 'Admin', 'admin@gmail.com', NULL, '$2y$10$IYnBpGMxGRB45fZOMunXTeuzSO91XIpTDl7KSwmRi8kSJlHnsnKR.', '2ALSxTK2k8SLaTNy5xspQSguA6ExZ8YyCDv9EvqGa5heSMMLl86QmV9utYkp', '2023-06-07 12:10:05', '2023-06-07 12:10:05');
 
 --
 -- Indexes for dumped tables
@@ -390,7 +413,7 @@ ALTER TABLE `table_states`
 -- AUTO_INCREMENT for table `table_sub_category`
 --
 ALTER TABLE `table_sub_category`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `table__accademy`
@@ -402,13 +425,13 @@ ALTER TABLE `table__accademy`
 -- AUTO_INCREMENT for table `table__category`
 --
 ALTER TABLE `table__category`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `table__teacher`
 --
 ALTER TABLE `table__teacher`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`

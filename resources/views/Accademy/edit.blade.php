@@ -4,9 +4,9 @@
     <div class="card-header">
         <h4 style="font-weight:600">Accademy</h4>
     </div>
-<form method="POST" action="{{ route('subCategory.Update', $academy->id) }}" enctype="multipart/form-data">
+<form method="POST" action="{{ route('Accademy.Update', $academy->id) }}" enctype="multipart/form-data">
     @csrf
-    @method('PUT')
+
 
     <div class="row">
         <div class="col-md-6">
@@ -68,43 +68,44 @@
             <div class="form-group pt-2">
                 <label class="required" for="to_time">Days</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="1" id="checkbox1" name="days[]" {{ in_array(1, $academy->days) ? 'checked' : '' }}>
+                    <input class="form-check-input" type="checkbox" value="1" id="checkbox1" name="days[]" {{ is_array($academy->days) && in_array(1, explode(',', $academy->days)) ? 'checked' : '' }}>
+
                     <label class="form-check-label" for="checkbox1">
                         Monday
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="2" id="checkbox2" name="days[]" {{ in_array(2, $academy->days) ? 'checked' : '' }}>
+                    <input class="form-check-input" type="checkbox" value="2" id="checkbox2" name="days[]" {{ in_array(2, explode(',', $academy->days)) ? 'checked' : '' }}>
                     <label class="form-check-label" for="checkbox2">
                         Tuesday
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="3" id="checkbox3" name="days[]" {{ in_array(3, $academy->days) ? 'checked' : '' }}>
+                    <input class="form-check-input" type="checkbox" value="3" id="checkbox3" name="days[]" {{ in_array(3,explode(',', $academy->days)) ? 'checked' : '' }}>
                     <label class="form-check-label" for="checkbox3">
                         Wednesday
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="4" id="checkbox4" name="days[]" {{ in_array(4, $academy->days) ? 'checked' : '' }}>
+                    <input class="form-check-input" type="checkbox" value="4" id="checkbox4" name="days[]" {{ in_array(4, explode(',', $academy->days)) ? 'checked' : '' }}>
                     <label class="form-check-label" for="checkbox4">
                         Thursday
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="5" id="checkbox5" name="days[]" {{ in_array(5, $academy->days) ? 'checked' : '' }}>
+                    <input class="form-check-input" type="checkbox" value="5" id="checkbox5" name="days[]" {{ in_array(5, explode(',', $academy->days)) ? 'checked' : '' }}>
                     <label class="form-check-label" for="checkbox5">
                         Friday
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="6" id="checkbox6" name="days[]" {{ in_array(6, $academy->days) ? 'checked' : '' }}>
+                    <input class="form-check-input" type="checkbox" value="6" id="checkbox6" name="days[]" {{ in_array(6, explode(',', $academy->days)) ? 'checked' : '' }}>
                     <label class="form-check-label" for="checkbox6">
                         Saturday
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="7" id="checkbox7" name="days[]" {{ in_array(7, $academy->days) ? 'checked' : '' }}>
+                    <input class="form-check-input" type="checkbox" value="7" id="checkbox7" name="days[]" {{ in_array(7,explode(',', $academy->days)) ? 'checked' : '' }}>
                     <label class="form-check-label" for="checkbox7">
                         Sunday
                     </label>
@@ -132,6 +133,9 @@
             </div>
             <div class="form-group">
                 <label class="required" for="image">Image</label>
+                @if ($academy->image)
+                <img src="{{ asset('storage/' . $academy->image) }}" alt="Image" width="100px" height="100px">
+            @endif
                 <input type="file" class="form-control-file" id="image" name="image">
             </div>
         </div>
@@ -143,3 +147,4 @@
 </form>
 </div>
 
+@endsection

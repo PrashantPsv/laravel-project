@@ -146,7 +146,7 @@
             </div>
         </form>
         <div class="pt-5" style="width: 400px;">
-            <table class="table table-bordered table-responsive table-striped table-hover datatable datatable-Createvehicle">
+            <table class="table table-bordered table-responsive table-striped table-hover datatable datatable-Createvehicle" style="width:400px">
                 <thead>
                     <tr>
                         <th>
@@ -255,7 +255,7 @@
                                     Edit
                                 </a>
                                 <a class="btn btn-xs btn-danger"
-                                    href="{{ route('subCategory.delete', [$accademys->id]) }}">
+                                    href="{{ route('Accademy.delete', [$accademys->id]) }}">
                                     Delete
                                 </a>
                             </td>

@@ -67,5 +67,5 @@ Route::get('/subCategory/{id}/delete', [subCategoryController::class, 'delete'])
 Route::get('Accademy/index', [AccademyController::class, 'index'])->name('Accademy.index');
 Route::post('Accademy/store', [AccademyController::class, 'store'])->name("Accademy.store");
 Route::get('/Accademy/{id}/edit', [AccademyController::class, 'edit'])->name('Accademy.edit');
-// Route::post('/subCategory/{id}/Update', [subCategoryController::class, 'Update'])->name('subCategory.Update');
-// Route::get('/subCategory/{id}/delete', [subCategoryController::class, 'delete'])->name('subCategory.delete');
+Route::post('/Accademy/{id}/Update', [AccademyController::class, 'Update'])->name('Accademy.Update');
+Route::get('/Accademy/{id}/delete', [AccademyController::class, 'delete'])->name('Accademy.delete');

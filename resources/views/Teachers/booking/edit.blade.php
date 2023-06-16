@@ -59,12 +59,14 @@
                 <label class="required" for="description">Description:</label>
                 <textarea class="form-control" id="description" name="description" rows="5">{{ $booking->description }}</textarea>
             </div>
-
+            @if (isset($booking->price) && $booking->price !='')
             <div class="form-group">
                 <label for="price">Price:</label>
                 <input type="number" name="price" value="{{ $booking->price }}" class="form-control" required>
 
             </div>
+            @endif
+
 
             <div class="form-group">
                 <label for="duration">Duration:</label>

@@ -17,10 +17,10 @@
         <div class="d-flex">
             <div>
                 <label for="show">Priced</label>
-                <input type="radio" name="show" value="show" id="show">
+                <input type="radio" name="show" value="show" id="showeed">
 
                 <label for="hide">NON Priced</label>
-                <input type="radio" name="show" value="hide" id="hide">
+                <input type="radio" name="show" value="hide" id="hideed">
             </div>
         </div>
 
@@ -70,9 +70,9 @@
                     <textarea class="form-control" id="description" name="description" rows="5"></textarea>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" id="price" style="display: none">
                     <label for="price">Price:</label>
-                    <input type="number" name="price" class="form-control" required>
+                    <input type="number" name="price" class="form-control" >
 
                 </div>
 
@@ -319,12 +319,17 @@
 
             $('input[name="show"]').on('click', function() {
 
-                if ($(this).attr('id') === 'show' && $(this).is(':checked')) {
-                    alert('sjb');
+                if ($(this).attr('id') === 'showeed' && $(this).is(':checked')) {
+                    // alert('sjb');
                     $('#main').show();
+                    $('#price').show();
                 }
-                if($(this).attr('id') === 'hide' && $(this).is(':checked')) {
-                    alert('sjbbib');
+                if($(this).attr('id') === 'hideed' && $(this).is(':checked')) {
+                    // alert('sjbbib');
+                    $('#main').show();
+                    $('#price').hide();
+
+
                 }
             })
         });

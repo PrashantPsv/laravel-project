@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2023 at 09:40 AM
+-- Generation Time: Jun 11, 2023 at 07:27 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -40,6 +40,48 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `language`
+--
+
+CREATE TABLE `language` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `language`
+--
+
+INSERT INTO `language` (`id`, `name`) VALUES
+(1, 'Tamil'),
+(2, 'English'),
+(3, 'Hindi'),
+(4, 'Bengali'),
+(5, 'Malayalam');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `level`
+--
+
+CREATE TABLE `level` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `level`
+--
+
+INSERT INTO `level` (`id`, `name`) VALUES
+(1, 'Beginner'),
+(2, 'Intermediate'),
+(3, 'Advanced');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -65,7 +107,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (9, '2023_06_06_151210_create_table__category', 1),
 (10, '2023_06_06_151338_create_table_sub_category', 1),
 (11, '2023_06_08_164822_create_table__accademy_table', 2),
-(12, '2023_06_08_165653_create_table__accademy_table', 3);
+(12, '2023_06_08_165653_create_table__accademy_table', 3),
+(13, '2023_06_11_105839_create_table__booking_table', 4);
 
 -- --------------------------------------------------------
 
@@ -220,6 +263,51 @@ INSERT INTO `table__accademy` (`id`, `name`, `address_1`, `address_2`, `State`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `table__booking`
+--
+
+CREATE TABLE `table__booking` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `Category` varchar(255) DEFAULT NULL,
+  `level` varchar(255) DEFAULT NULL,
+  `language` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `price` varchar(255) DEFAULT NULL,
+  `duration` varchar(255) DEFAULT NULL,
+  `spot` varchar(255) DEFAULT NULL,
+  `days` varchar(255) DEFAULT NULL,
+  `start_date` varchar(255) DEFAULT NULL,
+  `sun_start_time` varchar(255) DEFAULT NULL,
+  `mon_start_time` varchar(255) DEFAULT NULL,
+  `tue_start_time` varchar(255) DEFAULT NULL,
+  `wed_start_time` varchar(255) DEFAULT NULL,
+  `thu_start_time` varchar(255) DEFAULT NULL,
+  `fri_start_time` varchar(255) DEFAULT NULL,
+  `sat_start_time` varchar(255) DEFAULT NULL,
+  `end_date` varchar(255) DEFAULT NULL,
+  `start_time` varchar(255) DEFAULT NULL,
+  `end_time` varchar(255) DEFAULT NULL,
+  `sun_end_time` varchar(255) DEFAULT NULL,
+  `mon_end_time` varchar(255) DEFAULT NULL,
+  `tue_end_time` varchar(255) DEFAULT NULL,
+  `wed_end_time` varchar(255) DEFAULT NULL,
+  `thu_end_time` varchar(255) DEFAULT NULL,
+  `fri_end_time` varchar(255) DEFAULT NULL,
+  `sat_end_time` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `table__booking`
+--
+
+INSERT INTO `table__booking` (`id`, `Category`, `level`, `language`, `description`, `price`, `duration`, `spot`, `days`, `start_date`, `sun_start_time`, `mon_start_time`, `tue_start_time`, `wed_start_time`, `thu_start_time`, `fri_start_time`, `sat_start_time`, `end_date`, `start_time`, `end_time`, `sun_end_time`, `mon_end_time`, `tue_end_time`, `wed_end_time`, `thu_end_time`, `fri_end_time`, `sat_end_time`, `created_at`, `updated_at`) VALUES
+(2, '1', '1', '1', 'test', '100', '2', '6', 'weekly', '2023-06-04', '22:49', NULL, NULL, NULL, NULL, NULL, NULL, '2023-06-03', '21:28', '21:28', '22:50', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `table__category`
 --
 
@@ -287,7 +375,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@gmail.com', NULL, '$2y$10$IYnBpGMxGRB45fZOMunXTeuzSO91XIpTDl7KSwmRi8kSJlHnsnKR.', '2ALSxTK2k8SLaTNy5xspQSguA6ExZ8YyCDv9EvqGa5heSMMLl86QmV9utYkp', '2023-06-07 12:10:05', '2023-06-07 12:10:05');
+(1, 'Admin', 'admin@gmail.com', NULL, '$2y$10$IYnBpGMxGRB45fZOMunXTeuzSO91XIpTDl7KSwmRi8kSJlHnsnKR.', 'zxpWYTv32NTzrvCDBNycF8Y4UHXOpIW6Cyr5GMPfnWrWJzGNlBzUrr76LpzS', '2023-06-07 12:10:05', '2023-06-07 12:10:05');
 
 --
 -- Indexes for dumped tables
@@ -299,6 +387,18 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `language`
+--
+ALTER TABLE `language`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `level`
+--
+ALTER TABLE `level`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `migrations`
@@ -351,6 +451,12 @@ ALTER TABLE `table__accademy`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `table__booking`
+--
+ALTER TABLE `table__booking`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `table__category`
 --
 ALTER TABLE `table__category`
@@ -380,10 +486,22 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `language`
+--
+ALTER TABLE `language`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `level`
+--
+ALTER TABLE `level`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -420,6 +538,12 @@ ALTER TABLE `table_sub_category`
 --
 ALTER TABLE `table__accademy`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `table__booking`
+--
+ALTER TABLE `table__booking`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `table__category`

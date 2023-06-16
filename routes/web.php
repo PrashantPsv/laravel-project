@@ -10,6 +10,8 @@ use App\Http\Controllers\subCategoryController;
 use App\Http\Controllers\TeacherC0ntroller;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\BookingController;
+
 
 
 Route::get('/', function () {
@@ -77,3 +79,10 @@ Route::post('Accademy/store', [AccademyController::class, 'store'])->name("Accad
 Route::get('/Accademy/{id}/edit', [AccademyController::class, 'edit'])->name('Accademy.edit');
 Route::post('/Accademy/{id}/Update', [AccademyController::class, 'Update'])->name('Accademy.Update');
 Route::get('/Accademy/{id}/delete', [AccademyController::class, 'delete'])->name('Accademy.delete');
+
+//Booking Form
+Route::get('Booking/index', [BookingController::class, 'index'])->name('booking.index');
+Route::post('Booking/store', [BookingController::class, 'store'])->name("booking.store");
+Route::get('/Booking/{id}/edit', [BookingController::class, 'edit'])->name('booking.edit');
+Route::post('/Booking/{id}/Update', [BookingController::class, 'Update'])->name('booking.Update');
+Route::get('/Booking/{id}/delete', [BookingController::class, 'delete'])->name('booking.delete');

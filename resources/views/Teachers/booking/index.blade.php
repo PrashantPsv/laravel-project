@@ -16,10 +16,10 @@
         @endif
         <div class="d-flex">
             <div>
-                <label for="show">Priced</label>
+                <label for="show">Paid</label>
                 <input type="radio" name="show" value="show" id="showeed">
 
-                <label for="hide">NON Priced</label>
+                <label for="hide">demo</label>
                 <input type="radio" name="show" value="hide" id="hideed">
             </div>
         </div>
